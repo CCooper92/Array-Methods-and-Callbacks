@@ -68,7 +68,7 @@ function getWinners(arr, cb) {
     let winners = getFinals(arr).map((cb) => {
             if (cb["Home Team Goals"] > cb["Away Team Goals"]) {
                 return cb["Home Team Name"];
-            } else if (cb["Home Team Goals"] < cb["Away Team Goals"]) {
+            } else{
                 return cb["Away Team Name"];
             }
         });
@@ -94,7 +94,7 @@ function getWinnersByYear(arr, cbYears, cbWinners) {
     });
     return winners;
 }
-
+//console.log(getWinnersByYear(fifaData, getYears, getWinners));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -111,7 +111,7 @@ function getAverageGoals( cb ) {
     let average = cb.reduce( ( counter, item ) => counter + ( item[ "Home Team Goals" ] + item[ "Away Team Goals" ] ), 0 ) / cb.length;
     return average.toPrecision( 3 );
 }
-
+console.log(getAverageGoals(fifaData));
 
 
 
